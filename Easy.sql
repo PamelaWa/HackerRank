@@ -14,11 +14,14 @@ FROM city
 WHERE ID = 1661;
 
 --Japanese Cities' Attributes
-SELECT *
+SELECT Name
 FROM city
 WHERE countrycode = 'JPN';
 
 --
+
+
+
 
 
 
