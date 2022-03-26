@@ -18,10 +18,11 @@ SELECT Name
 FROM city
 WHERE countrycode = 'JPN';
 
---
+--Weather Observation Station 1
+SELECT city, state
+FROM station;
 
-
-
+--Weather Observation Station 3
 
 
 
