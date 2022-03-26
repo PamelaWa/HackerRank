@@ -22,11 +22,15 @@ WHERE countrycode = 'JPN';
 SELECT city, state
 FROM station;
 
---Weather Observation Station 3
+--*Weather Observation Station 3
+SELECT DISTINCT city
+FROM station
+WHERE MOD(station.ID,2)=0
+ORDER BY city;
 
-
-
-
+--Weather Observation Station 4
+SELECT (COUNT(city)-COUNT(distinct city))
+FROM station;
 
 
 
