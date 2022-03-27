@@ -41,8 +41,14 @@ SELECT DISTINCT city
 FROM station 
 WHERE LOWER(substr(CITY,1,1)) in ('a','e','i','o','u') ;
 
-
-
+--Weather Observation Station 7
+SELECT DISTINCT CITY FROM STATION
+WHERE lcase(CITY) LIKE '%a'
+OR lcase(CITY) LIKE '%e'
+OR lcase(CITY) LIKE '%i'
+OR lcase(CITY) LIKE '%o'
+OR lcase(CITY) LIKE '%u'
+ORDER BY CITY;
 
 
 
