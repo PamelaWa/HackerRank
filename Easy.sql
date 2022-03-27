@@ -32,6 +32,19 @@ ORDER BY city;
 SELECT (COUNT(city)-COUNT(distinct city))
 FROM station;
 
+--Weather Observation Station 5
+SELECT city,LENGTH(city) FROM station ORDER BY LENGTH(city) ASC, city limit 1;
+SELECT city,LENGTH(city) FROM station ORDER BY LENGTH(city) DESC, city limit 1;
+
+--Weather Observation Station 6
+SELECT DISTINCT city
+FROM station 
+WHERE LOWER(substr(CITY,1,1)) in ('a','e','i','o','u') ;
+
+
+
+
+
 
 
 
