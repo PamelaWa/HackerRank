@@ -39,16 +39,41 @@ SELECT city,LENGTH(city) FROM station ORDER BY LENGTH(city) DESC, city limit 1;
 --Weather Observation Station 6
 SELECT DISTINCT city
 FROM station 
-WHERE LOWER(substr(CITY,1,1)) in ('a','e','i','o','u') ;
+WHERE upper(substr(city, 1,1)) IN ('A','E','I','O','U');
 
 --Weather Observation Station 7
-SELECT DISTINCT CITY FROM STATION
-WHERE lcase(CITY) LIKE '%a'
-OR lcase(CITY) LIKE '%e'
-OR lcase(CITY) LIKE '%i'
-OR lcase(CITY) LIKE '%o'
-OR lcase(CITY) LIKE '%u'
-ORDER BY CITY;
+SELECT DISTINCT city
+FROM station 
+WHERE upper(substr(city, length(city),1)) IN ('A','E','I','O','U');
+
+--Weather Observation Station 8
+SELECT DISTINCT city
+FROM station 
+WHERE upper(substr(city, 1,1)) IN ('A','E','I','O','U') 
+AND upper(substr(city, length(city),1)) IN ('A','E','I','O','U');
+
+--Weather Observation Station 9
+SELECT DISTINCT city
+FROM station 
+WHERE upper(substr(city, 1,1)) NOT IN ('A','E','I','O','U');
+
+--Weather Observation Station 10
+SELECT DISTINCT city
+FROM station 
+WHERE upper(substr(city, length(city),1)) NOT IN ('A','E','I','O','U');
+
+--Weather Observation Station 11
+SELECT DISTINCT city
+FROM station 
+WHERE upper(substr(city, 1,1)) NOT IN ('A','E','I','O','U') 
+OR upper(substr(city, length(city),1)) NOT IN ('A','E','I','O','U');
+
+--Weather Observation Station 12
+SELECT DISTINCT city
+FROM station 
+WHERE upper(substr(city, 1,1)) NOT IN ('A','E','I','O','U') 
+AND upper(substr(city, length(city),1)) NOT IN ('A','E','I','O','U');
+
 
 
 
