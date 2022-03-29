@@ -81,8 +81,16 @@ WHERE marks > 75
 ORDER BY SUBSTR(name, length(name)-2, LENGTH(name)), id;
 
 --Employee Names
+SELECT name
+FROM Employee
+ORDER BY name ASC;
 
-
+--Employee Salaries
+SELECT name
+FROM Employee
+WHERE salary > 2000 
+AND months < 10
+ORDER BY employee_id ASC;
 
 
 
