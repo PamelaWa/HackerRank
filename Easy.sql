@@ -74,6 +74,28 @@ FROM station
 WHERE upper(substr(city, 1,1)) NOT IN ('A','E','I','O','U') 
 AND upper(substr(city, length(city),1)) NOT IN ('A','E','I','O','U');
 
+--Higher Than 75 Marks
+SELECT name 
+FROM students
+WHERE marks > 75
+ORDER BY SUBSTR(name, length(name)-2, LENGTH(name)), id;
+
+--Employee Names
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
