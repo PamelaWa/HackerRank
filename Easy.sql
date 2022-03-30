@@ -92,20 +92,39 @@ WHERE salary > 2000
 AND months < 10
 ORDER BY employee_id ASC;
 
+--Type of Triangle
+SELECT
+  CASE 
+    WHEN A + B <= C or A + C <= B or B + C <= A THEN 'Not A Triangle'
+    WHEN A = B and B = C THEN 'Equilateral'
+    WHEN A = B or A = C or B = C THEN 'Isosceles'
+    WHEN A <> B and B <> C THEN 'Scalene'
+  END 
+FROM TRIANGLES;
 
+--Revising Aggregations - The Count Function
+SELECT COUNT(population)
+FROM city
+WHERE population > 100000;
 
+--Revising Aggregations - The Sum Function
+SELECT SUM(population)
+FROM city
+WHERE district = 'California';
 
+--Revising Aggregations - Averages
+SELECT AVG(population)
+FROM city
+WHERE district = 'California';
 
+--Average Population
+SELECT ROUND(AVG(population))
+FROM city;
 
-
-
-
-
-
-
-
-
-
+--Japan Population
+SELECT SUM(population)
+FROM city
+WHERE countrycode = 'JPN';
 
 
 
