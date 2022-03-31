@@ -132,7 +132,13 @@ FROM city;
 
 --*The Blunder
 SELECT CEIL(AVG(Salary)-AVG(REPLACE(Salary,'0','')))
-FROM  EMPLOYEES
+FROM  EMPLOYEES;
+
+--Top Earners
+SELECT MAX(salary * months),COUNT(salary * months)
+FROM employee
+WHERE (salary * months)=(SELECT MAX(salary * months) FROM employee)
+
 
 
 
