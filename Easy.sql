@@ -126,6 +126,14 @@ SELECT SUM(population)
 FROM city
 WHERE countrycode = 'JPN';
 
+--Population Density Difference
+SELECT Max(population)-Min(population)
+FROM city;
+
+--*The Blunder
+SELECT CEIL(AVG(Salary)-AVG(REPLACE(Salary,'0','')))
+FROM  EMPLOYEES
+
 
 
 
