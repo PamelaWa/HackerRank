@@ -139,6 +139,20 @@ SELECT MAX(salary * months),COUNT(salary * months)
 FROM employee
 WHERE (salary * months)=(SELECT MAX(salary * months) FROM employee)
 
+--Weather Observation Station 2
+SELECT ROUND(SUM(LAT_N),2) AS lat,ROUND(SUM(LONG_W),2) AS lon
+FROM station;
+
+--Weather Observation Station 13
+SELECT ROUND(SUM(LAT_N),4)
+FROM station
+WHERE LAT_N > 38.7880 AND LAT_N < 137.2345
+
+--Weather Observation Station 14
+SELECT ROUND(MAX(LAT_N),4)
+FROM station
+WHERE LAT_N < 137.2345
+
 
 
 
