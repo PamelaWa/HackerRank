@@ -153,7 +153,31 @@ SELECT ROUND(MAX(LAT_N),4)
 FROM station
 WHERE LAT_N < 137.2345
 
+--Weather Observation Station 15
+SELECT ROUND(LONG_W,4)
+FROM station 
+WHERE LAT_N=(
+     SELECT MAX(LAT_N)
+     FROM station
+     WHERE LAT_N < 137.2345)
 
+--Weather Observation Station 16
+SELECT ROUND(MIN(LAT_N),4)
+FROM station
+WHERE LAT_N > 38.7780
+
+--Weather Observation Station 17
+SELECT ROUND(LONG_W,4)
+FROM station 
+WHERE LAT_N=(
+     SELECT MIN(LAT_N)
+     FROM station
+     WHERE LAT_N > 38.7780)
+     
+     
+     
+     
+     
 
 
 
