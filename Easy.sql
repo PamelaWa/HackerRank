@@ -174,10 +174,18 @@ WHERE LAT_N=(
      FROM station
      WHERE LAT_N > 38.7780)
      
-     
-     
-     
-     
+--Population Census
+SELECT SUM(city.population)
+FROM city JOIN country ON city.countrycode = country.code
+WHERE country.continent='ASIA'
+
+--African Cities
+SELECT city.name
+FROM city JOIN country ON city.countrycode = country.code
+WHERE country.continent='Africa'
+
+--Average Population of Each Continent
+
 
 
 
