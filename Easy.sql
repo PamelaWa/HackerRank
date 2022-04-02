@@ -184,8 +184,10 @@ SELECT city.name
 FROM city JOIN country ON city.countrycode = country.code
 WHERE country.continent='Africa'
 
---Average Population of Each Continent
-
+--*Average Population of Each Continent
+Select COUNTRY.Continent, FLOOR(AVG(CITY.POPULATION)) 
+From CITY join COUNTRY on CITY.CountryCode = COUNTRY.Code  
+Group by country.continent
 
 
 
