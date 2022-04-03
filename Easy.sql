@@ -189,6 +189,17 @@ Select COUNTRY.Continent, FLOOR(AVG(CITY.POPULATION))
 From CITY join COUNTRY on CITY.CountryCode = COUNTRY.Code  
 Group by country.continent
 
+--*Draw The Triangle 1
+SET @no_of_lines = 20 + 1;
+SELECT REPEAT('* ', @no_of_lines := @no_of_lines -1) 
+FROM INFORMATION_SCHEMA.TABLES
+LIMIT 20;
+
+--Draw The Triangle 2
+SET @no_of_lines = 0;
+SELECT REPEAT('* ', @no_of_lines := @no_of_lines +1) 
+FROM INFORMATION_SCHEMA.TABLES
+LIMIT 20;
 
 
 
