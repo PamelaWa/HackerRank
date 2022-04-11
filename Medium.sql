@@ -35,9 +35,15 @@ from (
     group by NameOrder
     ) as Names
 
-
-
-
+--Binary Tree Nodes
+SELECT CASE
+       WHEN P is NULL THEN CONCAT(n,' Root')
+       WHEN N in 
+       (SELECT DISTINCT P FROM BST) THEN CONCAT (n, ' Inner')
+       ELSE CONCAT(n,' Leaf')
+     END
+FROM BST
+ORDER BY N ASC
 
 
 
