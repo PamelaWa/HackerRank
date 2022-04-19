@@ -63,8 +63,9 @@ on e.manager_code = m.manager_code
 group by c.company_code, c.founder
 order by c.company_code asc
 
-
-
+--Weather Observation Station 19
+select round(sqrt(power(max(LAT_N) - min(LAT_N), 2) + power(max(LONG_W) - min(LONG_W), 2)), 4)
+FROM STATION;
 
 
 
