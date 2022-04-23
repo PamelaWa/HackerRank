@@ -67,8 +67,14 @@ order by c.company_code asc
 select round(sqrt(power(max(LAT_N) - min(LAT_N), 2) + power(max(LONG_W) - min(LONG_W), 2)), 4)
 FROM STATION;
 
-
-
+--Weather Observation Station 20
+SELECT ROUND(S1.LAT_N, 4) 
+    FROM STATION AS S1 
+    WHERE (SELECT ROUND(COUNT(S1.ID)/2) - 1 
+           FROM STATION) = 
+          (SELECT COUNT(S2.ID) 
+           FROM STATION AS S2 
+           WHERE S2.LAT_N > S1.LAT_N)
 
 
 
