@@ -83,7 +83,7 @@ SELECT CASE
        END
        ,Grades.grade, Students.marks
 FROM Students,Grades
-WHERE Students.marks >= Grades.min_mark OR Students.marks <= Grades.max_mark
+WHERE Students.marks >= Grades.min_mark AND Students.marks <= Grades.max_mark
 ORDER BY Grades.grade DESC, Students.name
 
 
