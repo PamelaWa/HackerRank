@@ -78,10 +78,10 @@ SELECT ROUND(S1.LAT_N, 4)
            
 --The Report
 SELECT CASE
-       WHEN Grades.grade < 8 THEN 'Null'
+       WHEN Grades.grade < 8 THEN 'NULL'
        ELSE Students.name
        END
-       ,Grades.grade, Students.marks
+,Grades.grade, Students.marks
 FROM Students,Grades
 WHERE Students.marks >= Grades.min_mark AND Students.marks <= Grades.max_mark
 ORDER BY Grades.grade DESC, Students.name
