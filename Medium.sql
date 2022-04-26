@@ -86,6 +86,22 @@ FROM Students,Grades
 WHERE Students.marks >= Grades.min_mark AND Students.marks <= Grades.max_mark
 ORDER BY Grades.grade DESC, Students.name
 
+Top Competitors
+SELECT Submissions.hacker_id, Hackers.name 
+FROM Hackers, Submissions, Challenges, Difficulty
+WHERE Submissions.score = Difficulty.score
+AND Hackers.hacker_id = Submissions.hacker_id 
+AND Submissions.challenge_id = Challenges.challenge_id 
+AND Challenges.difficulty_level = Difficulty.difficulty_level
+GROUP BY Submissions.hacker_id, Hackers.name
+HAVING count(*) > 1 
+ORDER BY count(*) DESC, Submissions.hacker_id ASC;
+
+
+
+
+
+
 
 
 
