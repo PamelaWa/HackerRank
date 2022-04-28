@@ -86,7 +86,7 @@ FROM Students,Grades
 WHERE Students.marks >= Grades.min_mark AND Students.marks <= Grades.max_mark
 ORDER BY Grades.grade DESC, Students.name
 
-Top Competitors
+--Top Competitors
 SELECT Submissions.hacker_id, Hackers.name 
 FROM Hackers, Submissions, Challenges, Difficulty
 WHERE Submissions.score = Difficulty.score
@@ -97,8 +97,14 @@ GROUP BY Submissions.hacker_id, Hackers.name
 HAVING count(*) > 1 
 ORDER BY count(*) DESC, Submissions.hacker_id ASC;
 
-
-
+--Ollivander's Inventory
+SELECT w.id, p.age, w.coins_needed, w.power
+FROM Wands AS w JOIN Wands_Property AS p ON w.code = p.code
+WHERE w.coins_needed = (SELECT min(coins_needed)
+                       FROM Wands INNER JOIN Wands_Property 
+                        ON Wands.code = Wands_Property.code
+                       WHERE Wands_Property.is_evil = 0 and p.age = Wands_Property.age and w.power = Wands.power)
+ORDER BY w.power DESC, p.age DESC
 
 
 
