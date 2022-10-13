@@ -145,6 +145,15 @@ WHERE Start_Date < End_Date
 GROUP BY Start_Date
 ORDER BY DATEDIFF(min(End_Date), Start_Date) ASC, Start_Date ASC;
 
+--Placements
+Select S.Name
+From Students S
+Join Friends F On S.ID = F.ID
+Join Packages P1 On P1.ID = S.Id
+Join Packages P2 On P2.ID = F.Friend_ID
+Where P2.Salary > P1.Salary
+Order By P2.Salary
+
 
 
 
